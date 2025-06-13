@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`flex flex-col min-h-screen ${doto.variable} antialiased`} >
+      <body className={`flex flex-col min-h-[100dvh] ${doto.variable} antialiased`} >
         <main className="flex flex-grow">
           {children}
         </main>

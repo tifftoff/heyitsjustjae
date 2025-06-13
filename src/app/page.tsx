@@ -9,7 +9,7 @@ export default function Home() {
         sequence={["heyit'sjustjae"]}
         wrapper="h1"
         className="font-[family-name:var(--font-doto)] text-[clamp(2.5rem,10vw,6rem)] font-extrabold"
-        speed={5}
+        speed={1}
       />
     </main>
   );

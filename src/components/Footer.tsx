@@ -10,7 +10,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="w-screen p-8 flex gap-[15px] text-[clamp(1.25rem,4vw,2rem)] text-center flex-wrap items-center justify-center">
+    <footer className="w-screen p-8 flex gap-[15px] text-[clamp(1.5rem,4vw,2.5rem)] text-center flex-wrap items-center justify-center">
         {socials.map((link) => (
           <a
             key={link.href} href={link.href} aria-label={link.label}
