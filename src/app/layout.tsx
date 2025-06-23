@@ -10,8 +10,8 @@ const doto = Doto({
 });
 
 export const metadata: Metadata = {
-  title: "heyit'sjustjae - official website",
-  description: "heyit'sjustjae - official website",
+  title: "heyitsjustjae - official website",
+  description: "heyitsjustjae - official website",
 };
 
 export default function RootLayout({
