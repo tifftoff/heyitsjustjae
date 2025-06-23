@@ -20,8 +20,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/icon.svg',
-        width: 1200,
-        height: 630,
       },
     ],
     locale: 'en_US',
