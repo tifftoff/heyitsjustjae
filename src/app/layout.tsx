@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
-import { Doto } from 'next/font/google';
 import './globals.css';
 
-import { Footer } from '@/components/Footer';
-
-const doto = Doto({
-  variable: '--font-doto',
-  subsets: ['latin'],
-});
+import { Sidebar } from '@/components/Sidebar';
+import { Section } from '@/components/Section';
 
 export const metadata: Metadata = {
   title: 'heyitsjustjae - official website',
@@ -34,11 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`flex flex-col min-h-[100dvh] ${doto.variable} antialiased`} >
-        <main className='flex flex-grow'>
+      <body className="flex flex-col min-h-[100dvh] antialiased" >
+        <main className='flex flex-grow min-h-[100dvh] justify-center items-center w-full'>
           {children}
         </main>
-        <Footer />
+        <Section />
+        <Sidebar />
       </body>
     </html>
   );

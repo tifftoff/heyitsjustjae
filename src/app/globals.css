@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'ocr-a-std';
+    src: local('ocr-a-std'), local('OCR-A'),
+      url('/fonts/ocr-a-std.woff2') format('woff2'),
+      url('/fonts/ocr-a-std.woff') format('woff'),
+      url('/fonts/ocr-a-std.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #171717;
   --foreground: #ffffff;
+  --font-ocr: 'ocr-a-std', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,5 +26,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: --font-doto;
+  font-family: var(--font-ocr);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

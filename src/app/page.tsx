@@ -8,7 +8,7 @@ export default function Home() {
       <TypeAnimation
         sequence={['heyitsjustjae']}
         wrapper='h1'
-        className='font-[family-name:var(--font-doto)] text-[clamp(2.5rem,10vw,6rem)] font-extrabold'
+        className='font-[family-name:var(--font-ocr)] text-[clamp(2.5rem,10vw,5rem)]'
         speed={1}
       />
     </main>
