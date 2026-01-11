@@ -32,7 +32,7 @@ body {
 }
 
 @keyframes turn-red {
-  50%, 100% { transform: translate(0, 0); color: #8f0202; text-shadow: 0 0 10px rgba(143, 2, 2, 0.516); }
+  20%, 100% { transform: translate(0, 0); color: #8f0202; text-shadow: 0 0 10px rgba(143, 2, 2, 0.516); }
 }
 
 .turn-red {
@@ -55,15 +55,15 @@ body {
 @keyframes slice-glitch {
   0% { opacity: 0; transform: translateX(0); clip-path: inset(0 0 0 0); }
   
-  50% { opacity: 1; transform: translateX(15px); clip-path: inset(40% 0 40% 0); }
+  20% { opacity: 1; transform: translateX(15px); clip-path: inset(40% 0 40% 0); }
 
-  53% { opacity: 1; transform: translateX(-5px); clip-path: inset(40% 0 40% 0); }
+  23% { opacity: 1; transform: translateX(-5px); clip-path: inset(40% 0 40% 0); }
 
-  55% { opacity: 0; transform: translateX(0); }
+  25% { opacity: 0; transform: translateX(0); }
 
-  95% { opacity: 1; transform: translateX(-15px); clip-path: inset(55% 0 25% 0); }
+  65% { opacity: 1; transform: translateX(-15px); clip-path: inset(55% 0 25% 0); }
 
-  98% { opacity: 1; transform: translateX(5px); clip-path: inset(55% 0 25% 0); }
+  68% { opacity: 1; transform: translateX(5px); clip-path: inset(55% 0 25% 0); }
 
-  100% { opacity: 0; transform: translateX(0); }
+  70%, 100% { opacity: 0; transform: translateX(0); }
 }
