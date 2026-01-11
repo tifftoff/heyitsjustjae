@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className='flex justify-center items-center w-full'>
       {/* Icon bar */}
-      <div className='absolute top-8 left-8 flex flex-col gap-6 text-[clamp(2rem,4vw,2.5rem)] text-center'>
+      <div className='absolute top-8 left-8 flex flex-col gap-4 md:gap-6 text-[clamp(2rem,4vw,2.5rem)] text-center'>
         {socials.map((link) => (
           <a
             key={link.href} href={link.href} aria-label={link.label}
