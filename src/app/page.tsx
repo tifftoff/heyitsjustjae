@@ -59,7 +59,7 @@ export default function Home() {
       <Title />
 
       {/* Email */}
-      <div className="absolute bottom-4 md:bottom-8 right-8 font-[family-name:var(--font-ocr)] text-xl md:text-2xl">
+      <div className="absolute md:bottom-8 md:right-8 md:top-auto top-8 right-8 font-[family-name:var(--font-ocr)] text-xl md:text-3xl">
         <a 
           href="mailto:jae.pena@outlook.com" 
           className="group relative flex items-center justify-end"
