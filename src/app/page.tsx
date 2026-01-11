@@ -38,7 +38,7 @@ export default function Home() {
       {/* Email */}
       <div className="absolute bottom-8 right-8 font-[family-name:var(--font-ocr)] text-2xl">
         <a 
-          href="mailto:jae.penae@outlook.com" 
+          href="mailto:jae.pena@outlook.com" 
           className="group relative flex items-center justify-end"
         >
           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2 pointer-events-none">
