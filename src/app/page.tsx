@@ -2,6 +2,7 @@
 
 import { TypeAnimation } from 'react-type-animation';
 import { FaXTwitter, FaInstagram, FaSoundcloud, FaTiktok, FaSpotify } from 'react-icons/fa6';
+import { useState } from 'react';
 
 const socials = [
   { href: 'https://www.instagram.com/heyitsjustjae', label: 'Instagram', icon: <FaInstagram /> },
@@ -11,6 +12,33 @@ const socials = [
   { href: 'https://x.com/heyitsjustjae', label: 'X', icon: <FaXTwitter /> },
 ];
 
+const Title = () => {
+  const [isDone, setIsDone] = useState(false);
+
+  return (
+    <h1 className='font-[family-name:var(--font-ocr)] text-[clamp(1rem,10vw,5rem)]'>
+      {!isDone ? (
+        <TypeAnimation
+          sequence={[
+            'heyitsjustjae',
+            () => setIsDone(true),
+          ]}
+          speed={1}
+          cursor={false}
+          repeat={0}
+        />
+      ) : (
+        <span>
+          heyits<span className="turn-red">justjae
+            <span className="glitch-slice" aria-hidden="true">
+              justjae
+            </span>
+          </span>
+        </span>
+      )}
+    </h1>
+  );
+};
 
 export default function Home() {
   return (
@@ -28,13 +56,7 @@ export default function Home() {
       </div>
 
       {/* Title */}
-      <TypeAnimation
-        sequence={['heyitsjustjae']}
-        wrapper='h1'
-        className='font-[family-name:var(--font-ocr)] text-[clamp(1rem,10vw,5rem)]'
-        speed={1}
-        cursor={false}
-      />
+      <Title />
 
       {/* Email */}
       <div className="absolute bottom-8 right-8 font-[family-name:var(--font-ocr)] text-2xl">
