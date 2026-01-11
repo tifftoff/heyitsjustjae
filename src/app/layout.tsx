@@ -6,16 +6,15 @@ import { Soundcloud } from '@/components/Soundcloud';
 export const metadata: Metadata = {
   title: 'heyitsjustjae - official website',
   description: 'heyitsjustjae - official website',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/squared-logo.png',
+  },
   openGraph: {
     title: 'heyitsjustjae - official website',
     description: 'heyitsjustjae - official website',
     url: 'https://heyitsjustjae.vercel.app', 
     siteName: 'heyitsjustjae - official website',
-    images: [
-      {
-        url: '/icon.svg',
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   }
@@ -33,7 +32,7 @@ export default function RootLayout({
         <main className='flex min-h-[100dvh] justify-center items-center w-full'>
           {children}
         </main>
-        <Soundcloud />
+        {/* <Soundcloud /> */}
       </body>
     </html>
   );

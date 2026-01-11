@@ -31,8 +31,9 @@ export default function Home() {
       <TypeAnimation
         sequence={['heyitsjustjae']}
         wrapper='h1'
-        className='font-[family-name:var(--font-ocr)] text-[clamp(1.5rem,10vw,5rem)]'
+        className='font-[family-name:var(--font-ocr)] text-[clamp(1rem,10vw,5rem)]'
         speed={1}
+        cursor={false}
       />
 
       {/* Email */}
