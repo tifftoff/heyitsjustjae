@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-import { Soundcloud } from '@/components/Soundcloud';
-
 export const metadata: Metadata = {
   title: 'heyitsjustjae - official website',
   description: 'heyitsjustjae - official website',
@@ -32,7 +30,6 @@ export default function RootLayout({
         <main className='flex min-h-[100dvh] justify-center items-center w-full'>
           {children}
         </main>
-        {/* <Soundcloud /> */}
       </body>
     </html>
   );
