@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-import { Sidebar } from '@/components/Sidebar';
-import { Section } from '@/components/Section';
+import { Soundcloud } from '@/components/Soundcloud';
 
 export const metadata: Metadata = {
   title: 'heyitsjustjae - official website',
@@ -31,11 +30,10 @@ export default function RootLayout({
     <html lang='en'>
       <meta name="google-site-verification" content="FRHjFBevsa0-4BRugQJ0lADRXYCT_1qLbW7DWXkaiBg" />
       <body className="flex flex-col antialiased" >
-        <main className='flex flex-grow min-h-[110dvh] justify-center items-center w-full'>
+        <main className='flex flex-grow min-h-[100dvh] justify-center items-center w-full'>
           {children}
         </main>
-        <Section />
-        <Sidebar />
+        <Soundcloud />
       </body>
     </html>
   );
