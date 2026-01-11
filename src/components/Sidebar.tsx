@@ -10,17 +10,15 @@ const socials = [
 
 export function Sidebar() {
   return (
-    <footer className='fixed top-8 left-8 flex flex-col gap-6 text-[clamp(1.5rem,4vw,2.5rem)] text-center'>
+    <aside className='fixed top-8 left-8 flex flex-col gap-6 text-[clamp(1.75rem,4vw,2.5rem)] text-center'>
         {socials.map((link) => (
           <a
             key={link.href} href={link.href} aria-label={link.label}
-            className={`w-[1em] h-[1em] flex items-center justify-center hover:text-neutral-400 transition-colors duration-300 ease-in-out ${
-              link.label === 'Soundcloud' ? '-mt-2' : ''
-            }`}
+            className='hover:text-neutral-400 transition-colors duration-300 ease-in-out'
           >
             {link.icon}
           </a>
         ))}
-      </footer>
+      </aside>
   )
 }
