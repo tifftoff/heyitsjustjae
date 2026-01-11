@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang='en'>
       <meta name="google-site-verification" content="FRHjFBevsa0-4BRugQJ0lADRXYCT_1qLbW7DWXkaiBg" />
       <body className="flex flex-col antialiased" >
-        <main className='flex flex-grow min-h-[100dvh] justify-center items-center w-full'>
+        <main className='flex min-h-[100dvh] justify-center items-center w-full'>
           {children}
         </main>
         <Soundcloud />
