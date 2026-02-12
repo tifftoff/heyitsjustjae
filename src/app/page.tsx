@@ -3,7 +3,7 @@
 import { Rubik_Glitch, Work_Sans } from 'next/font/google';
 import { TypeAnimation } from 'react-type-animation';
 import { FaXTwitter, FaInstagram, FaSoundcloud, FaTiktok, FaSpotify } from 'react-icons/fa6';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const rubik = Rubik_Glitch({
   weight: ['400'],
@@ -17,15 +17,14 @@ const work = Work_Sans({
   subsets: ['latin'],
 });
 
-const socials = [
-  { href: 'https://x.com/heyitsjustjae', label: 'X', icon: <FaXTwitter /> },
-  { href: 'https://open.spotify.com/user/jamesp12349?si=37b55767bf6d4216', label: 'Spotify', icon: <FaSpotify /> },
-  { href: 'https://soundcloud.com/heyitsjustjae', label: 'Soundcloud', icon: <FaSoundcloud /> },
-  { href: 'https://www.instagram.com/heyitsjustjae', label: 'Instagram', icon: <FaInstagram /> },
-  { href: 'https://tiktok.com/@heyitsjustjae', label: 'TikTok', icon: <FaTiktok /> },
-];
-
 const Socials = () => {
+  const socials = [
+    { href: 'https://x.com/heyitsjustjae', label: 'X', icon: <FaXTwitter /> },
+    { href: 'https://open.spotify.com/user/jamesp12349?si=37b55767bf6d4216', label: 'Spotify', icon: <FaSpotify /> },
+    { href: 'https://soundcloud.com/heyitsjustjae', label: 'Soundcloud', icon: <FaSoundcloud /> },
+    { href: 'https://www.instagram.com/heyitsjustjae', label: 'Instagram', icon: <FaInstagram /> },
+    { href: 'https://tiktok.com/@heyitsjustjae', label: 'TikTok', icon: <FaTiktok /> },
+  ];
   return (
     <div className='flex justify-center gap-5 text-3xl'>
         {socials.map((link) => (
@@ -101,7 +100,7 @@ const Music = () => {
   ];
 
   return (
-    <section id="music" className="w-full min-h-screen flex flex-col items-center justify-center px-4">
+    <section id="music" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[24vh]">
       <h2 className="font-[family-name:var(--font-work)] text-4xl md:text-6xl uppercase mb-12 tracking-widest">
         Music
       </h2>
@@ -123,6 +122,12 @@ const Music = () => {
 const Shows = () => {
   const showData = [
     {
+      date: 'FEB 13',
+      venue: "Valentine's Stoplight Mixer",
+      city: 'Dallas, TX',
+      ticketUrl: 'https://partiful.com/e/GqrizOIbHLQaseccN03Q',
+    },
+    {
       date: 'MAR 7',
       venue: 'AFER HTX',
       city: 'Houston, TX',
@@ -131,7 +136,7 @@ const Shows = () => {
   ];
 
   return (
-    <section id="shows" className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-20">
+    <section id="shows" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[24vh]">
       <h2 className="font-[family-name:var(--font-work)] text-4xl md:text-6xl uppercase mb-16 tracking-widest">
         Shows
       </h2>
@@ -176,9 +181,26 @@ const Shows = () => {
 };
 
 export default function Home() {
+  const [blurValue, setBlurValue] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate how far we've scrolled relative to the viewport height
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+    
+      
+      // Gradually increase blur up to 10px as we scroll down one full screen
+      const newBlur = Math.min((scrollY / viewportHeight) * 2, 12); 
+      setBlurValue(newBlur);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className={`${rubik.variable} ${work.variable} w-full min-h-screen text-white`}>
-      <section className="relative h-screen w-full flex flex-col justify-center items-center">
+      <section style={{ filter: `blur(${blurValue}px)` }} className="relative h-screen w-full flex flex-col justify-center items-center">
         <div className="absolute top-6 w-full">
           <Socials />
         </div>
