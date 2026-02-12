@@ -27,7 +27,7 @@ const socials = [
 
 const Socials = () => {
   return (
-    <div className='flex justify-center gap-5 text-[clamp(1.5rem,1.75vw,2rem)]'>
+    <div className='flex justify-center gap-5 text-3xl'>
         {socials.map((link) => (
           <a
             key={link.href} href={link.href} aria-label={link.label}
@@ -43,7 +43,7 @@ const Socials = () => {
 const Title = () => {
   const [isDone, setIsDone] = useState(false);
   return (
-    <h1 className={`font-[family-name:var(--font-rubik)] text-[clamp(2.5rem,6vw,6rem)]`}>
+    <h1 className={`font-[family-name:var(--font-rubik)] text-4xl md:text-8xl`}>
       {!isDone ? (
         <TypeAnimation
           sequence={[
