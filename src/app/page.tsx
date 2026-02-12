@@ -43,7 +43,7 @@ const Socials = () => {
 const Title = () => {
   const [isDone, setIsDone] = useState(false);
   return (
-    <h1 className={`font-[family-name:var(--font-rubik)] text-4xl md:text-8xl`}>
+    <h1 className={`font-[family-name:var(--font-rubik)] text-5xl md:text-8xl`}>
       {!isDone ? (
         <TypeAnimation
           sequence={[
@@ -73,7 +73,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className={`absolute font-[family-name:var(--font-work)] bottom-[6vh] w-full flex justify-center gap-20 md:gap-120 text-xl md:text-4xl`}>
+    <nav className={`absolute font-[family-name:var(--font-work)] bottom-[20vh] md:bottom-[6vh] w-full flex justify-center gap-20 md:gap-120 text-xl md:text-4xl`}>
       <button 
         onClick={() => scrollTo('music')}
         className="hover:text-neutral-400 transition-colors duration-200 ease-in-out cursor-pointer uppercase tracking-widest"
