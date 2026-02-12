@@ -73,7 +73,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className={`absolute font-[family-name:var(--font-work)] bottom-[18vh] md:bottom-[6vh] w-full flex justify-center gap-20 md:gap-120 text-xl md:text-4xl`}>
+    <nav className={`absolute font-[family-name:var(--font-work)] bottom-[16vh] md:bottom-[6vh] w-full flex justify-center gap-20 md:gap-120 text-xl md:text-4xl`}>
       <button 
         onClick={() => scrollTo('music')}
         className="hover:text-neutral-400 transition-colors duration-200 ease-in-out cursor-pointer uppercase tracking-widest"
