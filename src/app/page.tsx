@@ -100,7 +100,7 @@ const Music = () => {
   ];
 
   return (
-    <section id="music" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[24vh]">
+    <section id="music" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[16vh]">
       <h2 className="font-[family-name:var(--font-work)] text-4xl md:text-6xl uppercase mb-12 tracking-widest">
         Music
       </h2>
@@ -176,9 +176,15 @@ const Shows = () => {
           </p>
         )}
       </div>
+      <a href="mailto:jae.pena@outlook.com" className="font-[family-name:var(--font-work)] mt-auto py-6 flex justify-center text-neutral-500 hover:text-white transition-colors duration-300">jae.pena@outlook.com</a>
     </section>
   );
 };
+
+const Footer = () => {
+  return
+}
+
 
 export default function Home() {
   const [blurValue, setBlurValue] = useState(0);
