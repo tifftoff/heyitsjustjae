@@ -29,7 +29,11 @@ const Socials = () => {
     <div className='flex justify-center gap-5 text-3xl'>
         {socials.map((link) => (
           <a
-            key={link.href} href={link.href} aria-label={link.label}
+            key={link.href}
+            href={link.href}
+            aria-label={link.label}
+            target="_blank"
+            rel="noopener noreferrer"
             className='hover:text-neutral-400 transition-colors duration-300 ease-in-out'
           >
             {link.icon}
@@ -176,15 +180,15 @@ const Shows = () => {
           </p>
         )}
       </div>
-      <a href="mailto:jae.pena@outlook.com" className="font-[family-name:var(--font-work)] mt-auto py-6 flex justify-center text-neutral-500 hover:text-white transition-colors duration-300">jae.pena@outlook.com</a>
+      <a
+        href="mailto:jae.pena@outlook.com"
+        className="font-[family-name:var(--font-work)] mt-auto py-6 flex justify-center text-neutral-500 hover:text-white transition-colors duration-300"
+      >
+        jae.pena@outlook.com
+      </a>
     </section>
   );
 };
-
-const Footer = () => {
-  return
-}
-
 
 export default function Home() {
   const [blurValue, setBlurValue] = useState(0);
