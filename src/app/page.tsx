@@ -4,6 +4,7 @@ import { Rubik_Glitch, Work_Sans } from 'next/font/google';
 import { TypeAnimation } from 'react-type-animation';
 import { FaXTwitter, FaInstagram, FaSoundcloud, FaTiktok, FaSpotify } from 'react-icons/fa6';
 import { useState, useEffect } from 'react';
+import tw from "tailwind-styled-components"
 
 const rubik = Rubik_Glitch({
   weight: ['400'],
@@ -17,6 +18,13 @@ const work = Work_Sans({
   subsets: ['latin'],
 });
 
+const SocialsContainer = tw.div`
+  flex
+  justify-center
+  gap-5
+  text-3xl
+`;
+
 const Socials = () => {
   const socials = [
     { href: 'https://x.com/heyitsjustjae', label: 'X', icon: <FaXTwitter /> },
@@ -26,7 +34,7 @@ const Socials = () => {
     { href: 'https://tiktok.com/@heyitsjustjae', label: 'TikTok', icon: <FaTiktok /> },
   ];
   return (
-    <div className='flex justify-center gap-5 text-3xl'>
+    <SocialsContainer>
         {socials.map((link) => (
           <a
             key={link.href}
@@ -39,14 +47,20 @@ const Socials = () => {
             {link.icon}
           </a>
         ))}
-      </div>
+      </SocialsContainer>
   );
 };
+
+const TitleContainer = tw.h1`
+  font-[family-name:var(--font-rubik)]
+  text-5xl
+  md:text-8xl
+`;
 
 const Title = () => {
   const [isDone, setIsDone] = useState(false);
   return (
-    <h1 className={`font-[family-name:var(--font-rubik)] text-5xl md:text-8xl`}>
+    <TitleContainer>
       {!isDone ? (
         <TypeAnimation
           sequence={[
@@ -66,9 +80,33 @@ const Title = () => {
           </span>
         </span>
       )}
-    </h1>
+    </TitleContainer>
   );
 };
+
+const NavContainer = tw.nav`
+  absolute
+  font-[family-name:var(--font-work)]
+  bottom-[14vh]
+  md:bottom-[6vh]
+  w-full
+  flex
+  justify-center
+  gap-24
+  md:gap-120
+  text-xl
+  md:text-4xl
+`;
+
+const NavButton = tw.button`
+  hover:text-neutral-400
+  transition-colors
+  duration-200
+  ease-in-out
+  cursor-pointer
+  uppercase
+  tracking-widest"
+`;
 
 const Nav = () => {
   const scrollTo = (id: string) => {
@@ -76,26 +114,48 @@ const Nav = () => {
   };
 
   return (
-    <nav className={`absolute font-[family-name:var(--font-work)] bottom-[14vh] md:bottom-[6vh] w-full flex justify-center gap-24 md:gap-120 text-xl md:text-4xl`}>
-      <button 
-        onClick={() => scrollTo('music')}
-        className="hover:text-neutral-400 transition-colors duration-200 ease-in-out cursor-pointer uppercase tracking-widest"
-      >
+    <NavContainer>
+      <NavButton onClick={() => scrollTo('music')}>
         Music
-      </button>
-      <button 
-        onClick={() => scrollTo('shows')}
-        className="hover:text-neutral-400 transition-colors duration-200 ease-in-out cursor-pointer uppercase tracking-widest"
-      >
+      </NavButton>
+      <NavButton onClick={() => scrollTo('shows')}>
         Shows
-      </button>
-    </nav>
+      </NavButton>
+    </NavContainer>
   );
 };
 
 const Pictures = () => {
   return null;
 };
+
+const MusicContainer = tw.section`
+  w-full
+  min-h-screen
+  flex
+  flex-col
+  items-center
+  justify-start
+  px-4
+  pt-[16vh]
+`;
+
+const Header = tw.h2`
+  font-[family-name:var(--font-work)]
+  text-4xl
+  md:text-6xl
+  uppercase
+  mb-12
+  tracking-widest
+`;
+
+const TrackContainer = tw.div`
+  w-full
+  max-w-3xl
+  flex
+  flex-col
+  gap-6
+`;
 
 const Music = () => {
   const trackLinks = [
@@ -108,12 +168,12 @@ const Music = () => {
   ];
 
   return (
-    <section id="music" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[16vh]">
-      <h2 className="font-[family-name:var(--font-work)] text-4xl md:text-6xl uppercase mb-12 tracking-widest">
+    <MusicContainer id="music">
+      <Header>
         Music
-      </h2>
+      </Header>
       
-      <div className="w-full max-w-3xl flex flex-col gap-6">
+      <TrackContainer>
         {trackLinks.map((link, index) => (
           <iframe
             key={index}
@@ -122,10 +182,47 @@ const Music = () => {
             src={link}
           ></iframe>
         ))}
-      </div>
-    </section>
+      </TrackContainer>
+    </MusicContainer>
   );
 };
+
+const ShowsContainer = tw.section`
+  w-full
+  min-h-screen
+  flex
+  flex-col
+  items-center
+  justify-start
+  px-4
+  pt-[24vh]
+`;
+
+const ShowList = tw.div`
+  w-full
+  max-w-4xl
+  font-[family-name:var(--font-work)]
+`;
+
+const ShowListItem = tw.div`
+  flex flex-col md:flex-row items-center justify-between py-6 border-b border-neutral-800 hover:bg-white/5 transition-colors duration-300 ease-in-out px-4 group
+`;
+
+const ShowData = tw.div`
+  flex flex-col md:flex-row items-center gap-4 md:gap-12 text-center md:text-left
+`;
+
+const ShowDate = tw.span`
+  text-2xl md:text-3xl font-bold tracking-tighter text-red-700
+`;
+
+const ShowVenue = tw.p`
+  text-xl md:text-2xl uppercase tracking-tight
+`;
+
+const ShowCity = tw.p`
+  text-neutral-500 text-sm md:text-base uppercase
+`;
 
 const Shows = () => {
   const showData = [
@@ -138,27 +235,22 @@ const Shows = () => {
   ];
 
   return (
-    <section id="shows" className="w-full min-h-screen flex flex-col items-center justify-start px-4 pt-[24vh]">
-      <h2 className="font-[family-name:var(--font-work)] text-4xl md:text-6xl uppercase mb-16 tracking-widest">
+    <ShowsContainer id="shows">
+      <Header>
         Shows
-      </h2>
+      </Header>
 
-      <div className="w-full max-w-4xl font-[family-name:var(--font-work)]">
+      <ShowList>
         {showData.map((show, index) => (
-          <div 
-            key={index} 
-            className="flex flex-col md:flex-row items-center justify-between py-6 border-b border-neutral-800 hover:bg-white/5 transition-colors duration-300 ease-in-out px-4 group"
-          >
+          <ShowListItem key={index}>
             {/* Date & Venue Info */}
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 text-center md:text-left">
-              <span className="text-2xl md:text-3xl font-bold tracking-tighter text-red-700">
-                {show.date}
-              </span>
+            <ShowData>
+              <ShowDate>{show.date}</ShowDate>
               <div>
-                <p className="text-xl md:text-2xl uppercase tracking-tight">{show.venue}</p>
-                <p className="text-neutral-500 text-sm md:text-base uppercase">{show.city}</p>
+                <ShowVenue>{show.venue}</ShowVenue>
+                <ShowCity>{show.city}</ShowCity>
               </div>
-            </div>
+            </ShowData>
 
             {/* Ticket Button */}
             <a
@@ -169,7 +261,7 @@ const Shows = () => {
             >
               Tickets
             </a>
-          </div>
+          </ShowListItem>
         ))}
         
         {showData.length === 0 && (
@@ -177,16 +269,20 @@ const Shows = () => {
             No upcoming shows announced.
           </p>
         )}
-      </div>
+      </ShowList>
       <a
         href="mailto:jae.pena@outlook.com"
         className="font-[family-name:var(--font-work)] mt-auto py-6 flex justify-center text-neutral-500 hover:text-white transition-colors duration-300"
       >
         jae.pena@outlook.com
       </a>
-    </section>
+    </ShowsContainer>
   );
 };
+
+const LandingContainer = tw.section`
+  relative h-screen w-full flex flex-col justify-center items-center
+`;
 
 export default function Home() {
   const [blurValue, setBlurValue] = useState(0);
@@ -208,13 +304,13 @@ export default function Home() {
 
   return (
     <main className={`${rubik.variable} ${work.variable} w-full min-h-screen text-white`}>
-      <section style={{ filter: `blur(${blurValue}px)` }} className="relative h-screen w-full flex flex-col justify-center items-center">
+      <LandingContainer style={{ filter: `blur(${blurValue}px)` }}>
         <div className="absolute top-6 w-full">
           <Socials />
         </div>
         <Title />
         <Nav />
-      </section>
+      </LandingContainer>
 
       <Pictures />
       <Music />
